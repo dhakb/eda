@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "step:01": "ts-node src/01-direct.ts"
+    "step:01": "npx tsx src/01-direct.ts",
+    "step:02": "npx tsx src/02-direct-async.ts"
   },
   "keywords": [],
   "author": "",
