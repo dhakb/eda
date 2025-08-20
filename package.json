@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "step:01": "npx tsx src/01-direct.ts",
-    "step:02": "npx tsx src/02-direct-async.ts"
+    "step:02": "npx tsx src/02-direct-async.ts",
+    "step:03": "npx tsx src/03-inmemory-bus.ts"
   },
   "keywords": [],
   "author": "",
