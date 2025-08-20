@@ -6,7 +6,6 @@ type Order = {
   total: number;
 }
 
-// Billing service
 function processPayment(order: Order): boolean {
   console.log(`[Billing] Processing payment for order ${order.id}, total $${order.total}`);
 
@@ -17,7 +16,7 @@ function processPayment(order: Order): boolean {
   return success;
 }
 
-// Shipping service
+
 function shipOrder(order: Order): void {
   console.log(`[Shipping] Preparing shipment for order ${order.id}`);
 }
