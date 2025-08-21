@@ -48,8 +48,6 @@ bus.subscribe("OrderPlaced", (event) => {
 
   const success = order.total < 100;
 
-  console.log(`[Billing] Payment ${success ? "approved" : "declined"} for order ${order.id}`);
-
   bus.publish({type: "PaymentProcessed", payload: {order, success}});
 });
 
@@ -62,6 +60,8 @@ bus.subscribe("PaymentProcessed", (event) => {
     console.log(`[Shipping] Payment failed for order ${order.id}, cannot ship`);
     return;
   }
+  console.log(`[Billing] Payment ${success ? "approved" : "declined"} for order ${order.id}`);
+  
   console.log(`[Shipping] Preparing shipment for order ${order.id}`);
 
   bus.publish({type: "OrderShipped", payload: order});
