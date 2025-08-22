@@ -16,7 +16,7 @@ type AppEvent =
 class EventBus {
   private subscribers: { [eventType: string]: ((event: AppEvent) => void)[] } = {};
 
-  subscribe(eventType: Event["type"], handler: (event: AppEvent) => void) {
+  subscribe(eventType: AppEvent["type"], handler: (event: AppEvent) => void) {
     if (!this.subscribers[eventType]) {
       this.subscribers[eventType] = [];
     }
