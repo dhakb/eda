@@ -7,16 +7,16 @@ type Order = {
 };
 
 
-type AppEvent =
+type Event =
   | { type: "OrderPlaced"; payload: Order }
   | { type: "PaymentProcessed"; payload: { order: Order; success: boolean } }
   | { type: "OrderShipped"; payload: Order };
 
 
 class EventBus {
-  private subscribers: { [eventType: string]: ((event: AppEvent) => void)[] } = {};
+  private subscribers: { [eventType: string]: ((event: Event) => void)[] } = {};
 
-  subscribe(eventType: AppEvent["type"], handler: (event: AppEvent) => void) {
+  subscribe(eventType: Event["type"], handler: (event: Event) => void) {
     if (!this.subscribers[eventType]) {
       this.subscribers[eventType] = [];
     }
@@ -24,7 +24,7 @@ class EventBus {
     this.subscribers[eventType].push(handler);
   }
 
-  publish(event: AppEvent) {
+  publish(event: Event) {
     console.log(`[Bus] Publishing event: ${event.type}`);
 
     const handlers = this.subscribers[event.type] || [];
