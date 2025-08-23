@@ -7,7 +7,8 @@
     "step:01": "npx tsx src/01-direct.ts",
     "step:02": "npx tsx src/02-direct-async.ts",
     "step:03": "npx tsx src/03-inmemory-bus.ts",
-    "step:04": "npx tsx src/04-idempotent-handlers.ts"
+    "step:04": "npx tsx src/04-idempotent-handlers.ts",
+    "step:05": "npx tsx src/05-async-delivery.ts"
   },
   "keywords": [],
   "author": "",
