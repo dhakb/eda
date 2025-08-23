@@ -93,7 +93,6 @@ bus.subscribe("OrderShipped", (event) => {
   notifiedOrders.add(order.id);
 });
 
-// --- Producer ---
 function placeOrder(order: Order) {
   console.log(`[Order] Placing order ${order.id} for user ${order.userId}`);
   bus.publish({ type: "OrderPlaced", payload: order });
