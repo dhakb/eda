@@ -103,4 +103,3 @@ const order: Order = { id: "o-1", userId: "u-1", total: 49.99 };
 
 placeOrder(order);
 placeOrder(order); // duplicate
-bus.publish({ type: "OrderPlaced", payload: order }); // duplicate event
