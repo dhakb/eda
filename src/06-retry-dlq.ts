@@ -57,7 +57,6 @@ class EventBus {
 
 const bus = new EventBus();
 
-// --- Services ---
 bus.subscribe("OrderPlaced", (event) => {
   if (event.type !== "OrderPlaced") return;
   const order = event.payload;
