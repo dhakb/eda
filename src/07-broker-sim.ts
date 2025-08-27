@@ -11,7 +11,7 @@ type Event =
   | { type: "PaymentProcessed"; payload: { order: Order; success: boolean } }
   | { type: "OrderShipped"; payload: Order };
 
-// --- Simulated Broker ---
+//  Broker simulation 
 class Broker {
   private queues: { [eventType: string]: Event[] } = {};
   private consumers: { [eventType: string]: ((event: Event) => void)[] } = {};
@@ -54,7 +54,7 @@ class Broker {
 
 const broker = new Broker();
 
-// --- Services ---
+//  Services 
 function billingService() {
   broker.subscribe("OrderPlaced", (event) => {
     if (event.type !== "OrderPlaced") return;
