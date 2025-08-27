@@ -84,9 +84,7 @@ function notificationService() {
   broker.subscribe("OrderShipped", (event) => {
     if (event.type !== "OrderShipped") return;
     const order = event.payload;
-    console.log(
-      `[Notification] Order ${order.id} shipped! User ${order.userId} notified.`
-    );
+    console.log(`[Notification] Order ${order.id} shipped! User ${order.userId} notified.`);
   });
 }
 
