@@ -15,7 +15,7 @@ type Event =
 class PartitionedBroker {
   private partitions: { [eventType: string]: Event[][] } = {};
   private consumers: { [eventType: string]: ((event: Event) => void)[] } = {};
-  private numPartitions: number;
+  private readonly numPartitions: number;
 
   constructor(numPartitions: number) {
     this.numPartitions = numPartitions;
