@@ -10,7 +10,8 @@
     "step:04": "npx tsx src/04-idempotent-handlers.ts",
     "step:05": "npx tsx src/05-async-delivery.ts",
     "step:06": "npx tsx src/06-retry-dlq.ts",
-    "step:07": "npx tsx src/07-broker-sim.ts"
+    "step:07": "npx tsx src/07-broker-sim.ts",
+    "step:08": "npx tsx src/08-partitions-ordering.ts"
   },
   "keywords": [],
   "author": "",
