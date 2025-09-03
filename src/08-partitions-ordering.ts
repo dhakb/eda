@@ -47,7 +47,7 @@ class PartitionedBroker {
     }
     this.consumers[eventType].push(consumer);
 
-    // Deliver backlog for all partitions
+    // delivers backlog for all partitions
     for (let i = 0; i < this.numPartitions; i++) {
       this.deliver(eventType, i);
     }
@@ -58,11 +58,11 @@ class PartitionedBroker {
     const consumers = this.consumers[eventType] || [];
     if (queue.length === 0 || consumers.length === 0) return;
 
-    // Deliver sequentially (FIFO) within this partition
+    // delivers sequentially (FIFO) within this partition
     while (queue.length > 0) {
       const event = queue.shift()!;
       for (const consumer of consumers) {
-        // each partition runs independently (parallelism simulated)
+        // each partition runs independently (simulated parallelism)
         setTimeout(() => consumer(event), Math.random() * 500);
       }
     }
