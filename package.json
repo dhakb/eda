@@ -11,7 +11,8 @@
     "step:05": "npx tsx src/05-async-delivery.ts",
     "step:06": "npx tsx src/06-retry-dlq.ts",
     "step:07": "npx tsx src/07-broker-sim.ts",
-    "step:08": "npx tsx src/08-partitions-ordering.ts"
+    "step:08": "npx tsx src/08-partitions-ordering.ts",
+    "step:09": "npx tsx src/09-event-sourcing.ts"
   },
   "keywords": [],
   "author": "",
